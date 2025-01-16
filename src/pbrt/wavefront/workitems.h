@@ -5,6 +5,12 @@
 #ifndef PBRT_WAVEFRONT_WORKITEMS_H
 #define PBRT_WAVEFRONT_WORKITEMS_H
 
+#if defined(__CUDACC__)
+#include <cuda/std/utility>       // for cuda::std::swap, etc.
+#include <cuda/std/iterator>      // for cuda::std::ranges::iter_move, etc.
+#include <cuda/std/ranges>        // or whichever sub-headers might be needed
+#endif
+
 #include <pbrt/pbrt.h>
 
 #include <pbrt/base/sampler.h>

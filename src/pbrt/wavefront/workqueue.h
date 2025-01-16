@@ -17,6 +17,12 @@
 #include <atomic>
 #include <utility>
 
+#if defined(__CUDACC__)
+#include <cuda/std/utility>       // for cuda::std::swap, etc.
+#include <cuda/std/iterator>      // for cuda::std::ranges::iter_move, etc.
+#include <cuda/std/ranges>        // or whichever sub-headers might be needed
+#endif
+
 #ifdef __CUDACC__
 
 #ifdef PBRT_IS_WINDOWS
